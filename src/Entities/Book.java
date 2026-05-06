@@ -1,6 +1,6 @@
 package Entities;
 
-public class Book  {
+public class Book extends LibraryItem {
     String bookAuthor;
 
     public String getBookAuthor() {
