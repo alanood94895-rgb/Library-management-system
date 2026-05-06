@@ -22,7 +22,7 @@ public class BorrowingServices {
                 libraryItem.setStatus("Borrowed");
                 System.out.println("Borrowed Done");
             }else {
-                System.out.println("SORRY, Item is not available");
+                System.out.println("Item is not available");
             }
 
         }else {
@@ -42,7 +42,7 @@ public class BorrowingServices {
                 libraryItem.setStatus("NOT Borrowed");
                 System.out.println("Return Done");
             }else {
-                System.out.println("SORRY, Item is not available");
+                System.out.println("Item is not available");
             }
 
         }else {

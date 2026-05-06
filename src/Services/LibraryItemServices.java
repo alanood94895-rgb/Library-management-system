@@ -16,7 +16,7 @@ public class LibraryItemServices {
     Scanner scanner = new Scanner(System.in);
     public LibraryItem addItem(){
 
-        System.out.println(" ** Adding new Item **");
+        System.out.println("Adding new Item ");
         System.out.println("Please Enter item ID");
         String newItemId = scanner.nextLine();
         libraryItem.setID(newItemId);
