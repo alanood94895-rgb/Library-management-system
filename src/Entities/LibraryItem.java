@@ -5,6 +5,7 @@ public class LibraryItem {
     String title;
     String status;
     String  ID;
+
     Integer publishYear;
 
     public String getTitle() {
@@ -58,4 +59,3 @@ public class LibraryItem {
     }
 }
 
-}
