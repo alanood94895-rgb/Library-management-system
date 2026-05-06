@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Member extends Address{
+
     String memberName;
     String memberID;
     Integer memberPhone;
-    // Member member = new Member();
+
+
     List<LibraryItem> libraryItems = new ArrayList<>();
 
     public String getMemberName() {
