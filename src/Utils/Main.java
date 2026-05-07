@@ -20,16 +20,16 @@ public class Main {
     static List<LibraryItem> libraryItems = new ArrayList<>();
     static List<Member> members = new ArrayList<>();
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         System.out.println(MenuMessages.MAIN_MENU_MESSAGE);
         Boolean mainMenuContinue = true;
         while (mainMenuContinue) {
             Integer option = scanner.nextInt();
-            switch (option){
+            switch (option) {
                 case 1 -> {
                     boolean first = true;
-                    while (first){
+                    while (first) {
                         System.out.println("ADDING BOOK");
                         libraryItemServices.addNewItem();
                         System.out.println("Enter E to exit");
@@ -38,9 +38,9 @@ public class Main {
                         }
                     }
                 }
-                case 2 ->{
+                case 2 -> {
                     boolean second = true;
-                    while (second){
+                    while (second) {
                         System.out.println("ADDING MAGAZINE");
                         libraryItemServices.addNewItem();
                         System.out.println("Enter E to exit");
@@ -49,10 +49,10 @@ public class Main {
                         }
                     }
                 }
-                case 3->{
+                case 3 -> {
                     boolean third = true;
-                    while (third){
-                        for (int i =0;i< libraryItems.size();i++) {
+                    while (third) {
+                        for (int i = 0; i < libraryItems.size(); i++) {
                             System.out.println(libraryItems.get(i));
                         }
                         System.out.println("Enter E to exit");
@@ -61,9 +61,9 @@ public class Main {
                         }
                     }
                 }
-                case 4->{
+                case 4 -> {
                     boolean fourth = true;
-                    while (fourth){
+                    while (fourth) {
                         System.out.println("SEARCHING BY TITLE");
                         libraryItemServices.FindItemWhoContain();
                         System.out.println("Enter E to exit");
@@ -73,9 +73,9 @@ public class Main {
                     }
 
                 }
-                case 5->{
+                case 5 -> {
                     boolean fifth = true;
-                    while (fifth){
+                    while (fifth) {
                         System.out.println("REGISTERING NEW MEMBER");
                         memberServices.addNewMember();
                         System.out.println("Enter E to exit");
@@ -84,10 +84,10 @@ public class Main {
                         }
                     }
                 }
-                case 6->{
+                case 6 -> {
                     boolean six = true;
-                    while (six){
-                        for (int i =0;i< members.size();i++) {
+                    while (six) {
+                        for (int i = 0; i < members.size(); i++) {
                             System.out.println(members.get(i));
                         }
                         System.out.println("Enter E to exit");
@@ -96,9 +96,9 @@ public class Main {
                         }
                     }
                 }
-                case 7->{
+                case 7 -> {
                     boolean seven = true;
-                    while (seven){
+                    while (seven) {
                         System.out.println("BORROWING AN ITEM");
                         borrowingServices.BorrowItem();
                         System.out.println("Enter E to exit");
@@ -107,9 +107,9 @@ public class Main {
                         }
                     }
                 }
-                case 8->{
+                case 8 -> {
                     boolean eight = true;
-                    while (eight){
+                    while (eight) {
                         System.out.println("RETURNING AN ITEM");
                         borrowingServices.ReturnItem();
                         System.out.println("Enter E to exit");
@@ -118,15 +118,72 @@ public class Main {
                         }
                     }
                 }
-                case 9->{
+                case 9 -> {
                     System.out.println("Exit");
                     mainMenuContinue = false;
                 }
                 default -> System.out.println("Select a choice from the list");
             }
         }
-
-
     }
+        public static void handelMenu(){
+            System.out.println(MenuMessages.MAIN_MENU_MESSAGE);
+                Integer option = scanner.nextInt();
+                switch (option) {
+                    case 1 -> {
+                        System.out.println("ADDING BOOK");
+                        libraryItemServices.addNewItem();
+                        handelMenu();
+                    }
 
-}
+                    case 2 -> {
+                        System.out.println("ADDING MAGAZINE");
+                        libraryItemServices.addNewItem();
+                        handelMenu();
+                    }
+                    case 3 -> {
+                        for (int i = 0; i < libraryItems.size(); i++) {
+                            System.out.println(libraryItems.get(i));
+                            handelMenu();
+                        }
+                    }
+
+
+                    case 4 -> {
+                        System.out.println("SEARCHING BY TITLE");
+                        libraryItemServices.FindItemWhoContain();
+                        handelMenu();
+                    }
+
+
+
+                    case 5 -> {
+                            System.out.println("REGISTERING NEW MEMBER");
+                            memberServices.addNewMember();
+                            handelMenu();
+                    }
+                    case 6 -> {
+                        for (int i = 0; i < members.size(); i++) {
+                            System.out.println(members.get(i));
+                            handelMenu();
+                        }
+                    }
+                    case 7 -> {
+                            System.out.println("BORROWING AN ITEM");
+                            borrowingServices.BorrowItem();
+                            handelMenu();
+                    }
+                    case 8 -> {
+                            System.out.println("RETURNING AN ITEM");
+                            borrowingServices.ReturnItem();
+                          handelMenu();
+                    }
+                    case 9 -> {
+                        System.out.println("Exit");
+                        return;
+                    }
+                    default -> System.out.println("Select a choice from the list");
+                }
+            }
+        }
+
